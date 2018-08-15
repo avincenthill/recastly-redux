@@ -1,8 +1,17 @@
 import { combineReducers } from 'redux';
 import currentVideo from './currentVideo.js';
 import videoList from './videoList.js';
+import currentVideoReducer from './currentVideo.js';
+import videoListReducer from './videoList.js';
+import searchValueReducer from './searchValue.js';
 
-var rootReducer = () => {};
+var rootReducer = () => {
+  return combineReducers({
+    video: currentVideoReducer,
+    videos: videoListReducer,
+    value: searchValueReducer
+  });
+};
 
 //TODO: define the root reducer for this app
 
